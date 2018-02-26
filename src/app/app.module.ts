@@ -3,14 +3,24 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { InitialComponent } from './initial/initial.component';
+import { ModalTermsComponent } from './modal-terms/modal-terms.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { SucessComponent } from './sucess/sucess.component';
+import { routing } from './app.routing';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InitialComponent,
+    ModalTermsComponent,
+    QuizComponent,
+    SucessComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing,
   ],
   providers: [],
   bootstrap: [AppComponent]
