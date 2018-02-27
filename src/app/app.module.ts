@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
+import { MaterializeModule} from 'angular2-materialize';
+
 import { AppComponent } from './app.component';
 import { InitialComponent } from './initial/initial.component';
 import { ModalTermsComponent } from './modal-terms/modal-terms.component';
@@ -19,6 +21,7 @@ import { routing } from './app.routing';
     SucessComponent
   ],
   imports: [
+    MaterializeModule,
     BrowserModule,
     routing,
   ],

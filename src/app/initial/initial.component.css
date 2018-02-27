@@ -1,0 +1,26 @@
+h1{
+    font-size: 1.5em;
+    color: rgb(199, 186, 144)
+}
+.initial-icon{
+    font-size: 10em;
+    color: rgb(199, 186, 144)
+}
+.btn-pattern{
+    border: 1px solid rgb(163, 111, 129);
+    border-radius: 6px;
+    padding: 0 4rem;
+    font-size: .9em;
+    height: 43px;
+    line-height: 43px;
+    color: rgb(158, 108, 126)
+}
+.box-buttons{
+
+}
+.space-right{
+    margin-right: 1em;
+}
+p{
+    color: rgb(136, 126, 126)
+}
