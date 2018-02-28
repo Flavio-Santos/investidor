@@ -1,20 +1,41 @@
 <main class="row">
   <div class="col m6 s12 offset-m3 center">
-    <div class="col m12 center">
+    <div class="col s12 m12 center">
         <i class="material-icons initial-icon">playlist_add_check</i>
     </div>
-    <h1>
+    <h1 class="base-color col s12 m12">
       Informações Recebidas
     </h1>
-    <div>
+    <div class="row">
       <p>Em até 48h daremos um retorno sobre a abertura da sua conta.</p>
       <p>Para receber recomendações de investimentos e começar a investir,precisamos conhecer seu perfil de investidor</p>
       <p>São 4 perguntas, que irão guiar todas as suas decisões de investimentos</p>
     </div>
-    <div class="box-buttons">
-      <p>Gostaria de responder ao Perfil do Investidor?</p>
-      <a class="waves-effect btn-flat btn-pattern space-right">Não</a>
-      <a class="waves-effect btn-flat btn-pattern">Sim</a>
+    <div class="box-buttons row center">
+      <p class="col s12">Gostaria de responder ao Perfil do Investidor?</p>
+      <a class="waves-effect btn-flat btn-pattern space-right modal-trigger col s5 marginBtns" href="#modalTerms">Não</a>
+      <a class="waves-effect btn-flat btn-pattern col s5" routerLink="/quiz">Sim</a>
     </div>
   </div>  
 </main>
+
+<!-- Modal -->
+<div id="modalTerms" class="modal center" materialize="modal" [materializeParams]="model1Params">
+    <i class="material-icons modalClose">clear</i>
+  <div class="modal-content">
+    <h1 class="purple-text">Termos</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Sequi esse placeat, mollitia quaerat a blanditiis! Provident
+       maiores impedit dignissimos eius, nemo, veniam quis deserunt omnis
+        voluptas dolorem, veritatis in placeat!
+    </p>
+  </div>
+  <div class="modal-footer center">
+      <p>
+        <input type="checkbox" class="filled-in" id="filled-in-box">
+        <label for="filled-in-box">Li e aceito os termos e codições acima</label>
+      </p>
+    <a href="#!" class="modal-action modal-close waves-effect btn-flat modal-button" routerLink="/quiz">ok, entendi</a>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+
+main{
+    font-size: .9em;
+}
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+    /*border: 2px solid purple;*/
+    /*transform: rotate(44deg);*/
+     border-radius: 0px; 
+    background-color: purple;
+}
+[type="radio"]:not(:checked) + label:before, [type="radio"]:not(:checked) + label:after, [type="radio"]:checked + label:before, [type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+    border-radius: 50%;
+}
+[type="radio"] + label:before, [type="radio"] + label:after {
+    left: 0;
+    top: 0;
+    margin: 4px;
+    width: 30px;
+    height: 29px;
+}
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+    padding-left: 42px;
+}
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+    border-radius: 0px;
+    border-color: white;
+    border: 0px;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    width: 19px;
+    height: 13px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(-45deg)!important;
+}
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before {
+    border: 2px solid purple; 
+}
+.labelCustom {
+    width: 100%!important;
+    text-align: center!important;
+    font-size: .9em!important;
+}
+
+.dividerCustom{
+    border-top: 2px solid gray;
+    border-top-style: dashed;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+label{
+    text-transform: uppercase;
+}
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+    line-height: 41px;
+}

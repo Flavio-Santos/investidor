@@ -1,3 +1,112 @@
-<p>
-  quiz works!
-</p>
+<main class="row center">
+  <h1 class="purple-text">Perfil do Investidor - Questionario</h1>
+
+  <form (ngSubmit)="onSubmit()" class="row container" [formGroup]="formulario">
+    <div class="col s12 center">
+      <p class="center">1 - Qual o seu comportamento em relação aos seu investimentos?</p>
+      <div class="col s4">
+        <p>
+          <input formControlName="conduct" value="1" type="radio" class="with-gap" id="conduct1">
+          <label for="conduct1">Preservar meu dinheiro sem correr riscos</label>
+        </p>
+      </div>
+      <div class="col s4">
+        <p>
+          <input formControlName="conduct" value="2" type="radio"  class="with-gap" id="conduct2">
+          <label for="conduct2">ganhar mais dinheiro assumindo riscos moderados</label>
+        </p>
+      </div>
+      <div class="col s4">
+        <p>
+          <input formControlName="conduct" value="3" type="radio" class=" with-gap" id="conduct3">
+          <label for="conduct3">ganhar mais dinheiro assumindo riscos grandes</label>
+        </p>
+      </div>
+    </div>
+
+    <div class="col s12 dividerCustom">
+      <p class="center">2 - Por quanto tempo você deseja manter os seus investimentos?</p>
+      <div class="col s4">
+        <p>
+          <input formControlName="time" value="1" type="radio" class="with-gap" id="time1">
+          <label for="time1">até um ano</label>
+        </p>
+      </div>
+      <div class="col s4">
+        <p>
+          <input formControlName="time" value="2" type="radio" class="with-gap" id="time2">
+          <label for="time2">de 1 a 3 anos</label>
+        </p>
+      </div>
+      <div class="col s4">
+        <p>
+          <input formControlName="time" value="3" type="radio" class="with-gap" id="time3">
+          <label for="time3">mais de 3 anos</label>
+        </p>
+      </div>
+    </div>
+
+    <div class="col s12 dividerCustom">
+      <p class="center">3 - Quantos % desses investimentos você pode precisar em um ano?</p>
+      <div class="col s4">
+        <p>
+          <input formControlName="percent" value="1" type="radio" class="with-gap" id="percent1">
+          <label for="percent1">acima de 75%</label>
+        </p>
+      </div>
+      <div class="col s4">
+        <p>
+          <input formControlName="percent" value="2" type="radio" class="with-gap" id="percent2">
+          <label for="percent2">de 26% a 74%</label>
+        </p>
+      </div>
+      <div class="col s4">
+        <p>
+          <input formControlName="percent" value="3" type="radio" class="with-gap" id="percent3">
+          <label for="percent3">até 25%</label>
+        </p>
+      </div>
+    </div>
+    <p>{{formulario.group}}</p>
+    <p>{{ formulario.value | json }}</p>
+    <!--<div class="col s12 dividerCustom">
+      <p class="center">4 - Qual sua familiaridade com os tipos de investimentos abaixo? Leve em consideração o valor aplicadonos últimos 2 anos.</p>
+      
+      <div class="input-field col s6">
+        <select name="singleSelect" [(ngModel)]="selectedOption" name="selectedOption" materialize="material_select" [materializeSelectOptions]="selectOptions" [disabled]="isDisabled?true:null">
+          <option value="" disabled selected>Selecione uma opção</option>
+          <option *ngFor="let option of selectOptions" [value]="option.value">{{option.name}}</option>
+        </select>
+        <label class="labelCustom uppercase">Titulos de renda fixa ou tesouro direto</label>
+      </div>
+
+      <div class="input-field col s6">
+        <select name="singleSelect" [(ngModel)]="selectedOption" name="selectedOption" materialize="material_select" [materializeSelectOptions]="selectOptions" [disabled]="isDisabled?true:null">
+          <option value="" disabled selected>Selecione uma opção</option>
+          <option *ngFor="let option of selectOptions" [value]="option.value">{{option.name}}</option>
+        </select>
+        <label class="labelCustom uppercase">fundos de investimentos</label>
+      </div>
+
+      <div class="input-field col s6">
+        <select name="singleSelect" [(ngModel)]="selectedOption" name="selectedOption" materialize="material_select" [materializeSelectOptions]="selectOptions" [disabled]="isDisabled?true:null">
+          <option value="" disabled selected>Selecione uma opção</option>
+          <option *ngFor="let option of selectOptions" [value]="option.value">{{option.name}}</option>
+        </select>
+        <label class="labelCustom uppercase">ações a vista</label>
+      </div>
+
+      <div class="input-field col s6">
+        <select name="singleSelect" [(ngModel)]="selectedOption" name="selectedOption" materialize="material_select" [materializeSelectOptions]="selectOptions" [disabled]="isDisabled?true:null">
+          <option value="" disabled selected>Selecione uma opção</option>
+          <option *ngFor="let option of selectOptions" [value]="option.value">{{option.name}}</option>
+        </select>
+        <label class="labelCustom uppercase">aluguel de ações termos opções e futuros</label>
+      </div>
+    </div>-->
+    <div class="right">
+      <a class="waves-effect btn-flat btn-pattern space-right modal-trigger col s5 marginBtns" routerLink="/">Não</a>
+      <button class="waves-effect btn-flat btn-pattern col s5" >Salvar</button>
+    </div>
+  </form>
+</main>

@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+h1{
+    font-size: 1.5em;
+}
+.base-color{
+    color: #c7ba90;
+}
+.btn-pattern{
+    border: 1px solid #a36f81;
+    border-radius: 6px;
+    padding: 0 4rem;
+    font-size: .9em;
+    height: 43px;
+    line-height: 43px;
+}
+.uppercase {
+    text-transform: uppercase;
+}

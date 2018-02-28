@@ -1,26 +1,90 @@
-h1{
-    font-size: 1.5em;
-    color: rgb(199, 186, 144)
+.purple{
+    color: #a36f81
 }
 .initial-icon{
     font-size: 10em;
-    color: rgb(199, 186, 144)
+    color: #c7ba90
 }
-.btn-pattern{
-    border: 1px solid rgb(163, 111, 129);
-    border-radius: 6px;
-    padding: 0 4rem;
-    font-size: .9em;
-    height: 43px;
-    line-height: 43px;
-    color: rgb(158, 108, 126)
-}
+
 .box-buttons{
 
 }
 .space-right{
-    margin-right: 1em;
+    margin-right: 1.66%;
+}
+.marginBtns{
+    margin-left: 7.5%!important;
 }
 p{
-    color: rgb(136, 126, 126)
+    color: #887e7e
+}
+
+.modal-button{
+    background-color: #ffb700;
+    padding: 0 6rem;
+    height: 43px;
+    line-height: 43px;
+    color: white;
+    font-weight: 800;
+}
+.modal-footer {
+    border-radius: 0 0 2px 2px;
+    background-color: hsl(0, 0%, 98%);
+    padding: 4px 6px;
+    height: 56px;
+    width: 100%;
+    text-align: center;
+}
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fafafa;
+    padding: 0;
+    max-height: 100%;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 2px;
+    will-change: top, opacity;
+}
+@media screen and (min-width: 843px){
+    .modal{
+        height: 54%;
+        width: 40%;
+    }
+}
+@media screen and (max-width: 843px){
+    .modal{
+        height: 56%;
+        width: 57%;
+    }
+}
+@media screen and (max-width: 600px){
+    .modal{
+        height: 60%;
+        width: 90%;
+    }
+}
+@media screen and (max-width: 325px){
+    .modal{
+        height: 70%;
+        width: 90%;
+    }
+}
+.modalClose{
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    color: #a5a5a5
+}
+[type="checkbox"].filled-in:checked + label:after {
+    border: 2px solid #a36f81;
+    background-color: #a36f81;
+}
+.modal-footer{
+    width: 85%;
+    border-top: 2px solid gray;
+    border-top-style: dashed;
+    margin: auto;
 }
