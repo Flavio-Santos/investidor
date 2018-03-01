@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'
+import 'rxjs/add/operator/map'
 
-import { MaterializeModule} from 'angular2-materialize';
+import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
 import { InitialComponent } from './initial/initial.component';
@@ -16,7 +17,7 @@ import { QuizService } from './quiz/quiz.service';
   declarations: [
     AppComponent,
     InitialComponent,
-    SucessComponent
+    SucessComponent,
   ],
   imports: [
     MaterializeModule,

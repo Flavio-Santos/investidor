@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { MaterializeDirective } from 'angular2-materialize';
 
+import { Quiz } from './quiz'
 import { QuizService } from './quiz.service'
 
 @Component({
@@ -11,29 +13,59 @@ import { QuizService } from './quiz.service'
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
-  isDisabled = false;
-
+  isDisabled = true;
+  quiz = new Quiz;
   /*quizService: QuizService;*/
-  questions: String[] =[];
+  questions: Object[]=[];
+  selectInputs: Object[]=[];
+  arrPer:String[]=[];
   formulario: FormGroup;
 
-  constructor( private formBuilder: FormBuilder, private http: Http, private quizService: QuizService) {
+  sapo: any;
+  constructor( private http: Http, private quizService: QuizService, private formBuilder: FormBuilder) {
     
    }
-
+   
   ngOnInit() {
-    this.questions = this.quizService.getQuestions();
-    console.log(this.questions);
+    this.quizService
+    .getQuestions1a3()
+    .subscribe(
+      data=>{
+        this.questions = data.perguntas;
+        console.log(this.questions.length)
+      },
+      err => {
+        console.log(err);
+      }
+    );
 
+    this.quizService
+    .getQuestion4()
+    .subscribe(
+      data=>{
+        this.selectInputs = data;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+    
+    
+    
     this.formulario = this.formBuilder.group({
-      conduct: [],
-      time: [],
-      percent: []
-      
+      q1:[],
+      q2:[],
+      q3:[],
+      s0:[],
+      s1:[],
+      s2:[],
+      s3:[],
     })
   }
+  
   onSubmit(){
-    console.log(this.formulario.value);
+    //this.quiz = this.formulario.value;
+    console.log(this.quiz);
     
     /*this.http.post('', JSON.stringify(this.formulario.value))
     .map(res=> res)
