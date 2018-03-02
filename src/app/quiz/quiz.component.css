@@ -65,3 +65,8 @@ select {
 select:active {
     outline: none;
 }
+
+.labelActive{
+    color: purple!important;
+
+}

@@ -3,12 +3,12 @@
 
   <form (ngSubmit)="onSubmit()" class="row container" [formGroup]="formulario">
     
-    <div class="col s12 center" *ngFor="let question of questions;let ind = index">
-      <p class="center">{{question.id}} - {{question.titulo}}</p>
-      <div class="col s4" *ngFor="let opcao of question.opcoes;let i = index">
+    <div class="col s12 center" *ngFor="let quizze of quizzes;let ind = index">
+      <p class="center">{{quizze.id}} - {{quizze.titulo}}</p>
+      <div class="col s4 validate" *ngFor="let opcao of quizze.opcoes;let i = index">
         <p>
-          <input formControlName="q{{question.id}}" [(ngModel)]="quiz[question.id]" value="{{opcao.texto}}" type="radio" class="with-gap" id="{{question.id}}{{opcao.id}}">
-          <label for="{{question.id}}{{opcao.id}}">{{opcao.texto}}</label>
+          <input formControlName="q{{ind}}" ngModel value="{{opcao}}" type="radio" class="with-gap" id="q{{ind}}{{i}}">
+          <label for="q{{ind}}{{i}}">{{opcao}}</label>
         </p>
       </div>
     </div>
@@ -19,54 +19,21 @@
     <div class="col s12 dividerCustom">
       <p class="center">4 - Qual sua familiaridade com os tipos de investimentos abaixo? Leve em consideração o valor aplicadonos últimos 2 anos.</p>
       
-      <div class="col s6" *ngFor="let titulo of selectInputs.titulos; let ind = index">
-        <div >
+      <div class="col s6" *ngFor="let quizSelection of quizSelect; let ind = index">
+        <div>
           <label class="labelCustom uppercase">{{titulo}}</label>
-          <select class="browser-default" formControlName="s{{ind}}" [(ngModel)]="quiz[ind+4]" >
+          <select class="browser-default" formControlName="s{{ind}}" ngModel >
               <option value="" disabled selected>Selecione uma opção</option>
-              <option *ngFor="let campo of selectInputs.campos" value="1">{{campo}}</option>
+              <option *ngFor="let campo of selectInputs.campos" value="{{quizSelection.id}}">{{quizSelection.titulo}}</option>
               
           </select>
         </div>
         
       </div>
-
-      <!-- <div class="input-field col s6" *ngFor="let titulo of selectInputs.titulos">
-        <select id="{{titulo}}" formControlName="{{titulo}}" materialize="material_select" [materializeSelectOptions]="arrPer">
-          <option value="" disabled selected>Selecione uma opção</option>
-          <option *ngFor="let campo of selectInputs.campos" >{{campo}}</option>
-        </select>
-        <label class="labelCustom uppercase">{{titulo}}</label>
-        
-      </div> -->
-
-      <!--<div class="input-field col s6">
-        <select name="singleSelect" [(ngModel)]="selectedOption" name="selectedOption" materialize="material_select" [materializeSelectOptions]="selectOptions" [disabled]="isDisabled?true:null">
-          <option value="" disabled selected>Selecione uma opção</option>
-          <option *ngFor="let option of selectOptions" [value]="option.value">{{option.name}}</option>
-        </select>
-        <label class="labelCustom uppercase">fundos de investimentos</label>
-      </div>
-
-      <div class="input-field col s6">
-        <select name="singleSelect" [(ngModel)]="selectedOption" name="selectedOption" materialize="material_select" [materializeSelectOptions]="selectOptions" [disabled]="isDisabled?true:null">
-          <option value="" disabled selected>Selecione uma opção</option>
-          <option *ngFor="let option of selectOptions" [value]="option.value">{{option.name}}</option>
-        </select>
-        <label class="labelCustom uppercase">ações a vista</label>
-      </div>
-
-      <div class="input-field col s6">
-        <select name="singleSelect" [(ngModel)]="selectedOption" name="selectedOption" materialize="material_select" [materializeSelectOptions]="selectOptions" [disabled]="isDisabled?true:null">
-          <option value="" disabled selected>Selecione uma opção</option>
-          <option *ngFor="let option of selectOptions" [value]="option.value">{{option.name}}</option>
-        </select>
-        <label class="labelCustom uppercase">aluguel de ações termos opções e futuros</label>
-      </div>-->
     </div>
     <div class="right">
       <a class="waves-effect btn-flat btn-pattern space-right modal-trigger col s5 marginBtns" routerLink="/">Não</a>
-      <button class="waves-effect btn-flat btn-pattern col s5" >Salvar</button>
+      <button class="waves-effect btn-flat btn-pattern col s5">Salvar</button>
     </div>
   </form>
 </main>

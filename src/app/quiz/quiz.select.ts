@@ -1,11 +1,11 @@
-class Quiz {
+class QuizSelect {
     id: number
     titulo: String
-    opcoes: String[]
+    optSelect: String[]
 
     constructor(object: any = {}) {
         
     }
 }
 
-export default Quiz
+export default QuizSelect

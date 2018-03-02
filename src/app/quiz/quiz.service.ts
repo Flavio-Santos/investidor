@@ -1,27 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import Quiz from './quiz'
 
 @Injectable()
 export class QuizService{
     
-    questions: Object ;
+    questions: Object
+    resource: string
 
     constructor(private http: Http){
+        this.resource = 'http://localhost:3000/quiz'
     }
-    getQuestions1a3(){
-        
-        return this
-        .http
-        .get('https://crud-api-angular2.herokuapp.com/perguntas1a3')
-        .map(res => res.json())
-        
-    }
-    getQuestion4(){
-        
-        return this
-        .http
-        .get('https://crud-api-angular2.herokuapp.com/pergunta4')
-        .map(res => res.json())
-        
+    
+    getQuestions(){
+        const { http, resource } = this
+        const data = http
+            .get(resource)
+            .map(res => res.json())
+        return data
     }
 }
