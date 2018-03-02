@@ -1,7 +1,7 @@
 class QuizSelect {
     id: number
     titulo: String
-    optSelect: String[]
+    opcoes: String[]
 
     constructor(object: any = {}) {
         

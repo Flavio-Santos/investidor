@@ -9,7 +9,7 @@ export class QuizService{
     resource: string
 
     constructor(private http: Http){
-        this.resource = 'http://localhost:3000/quiz'
+        this.resource = 'https://crud-api-angular2.herokuapp.com/quiz'
     }
     
     getQuestions(){

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import 'rxjs/add/operator/map'
 
 import { MaterializeModule } from 'angular2-materialize';
@@ -8,7 +8,7 @@ import { MaterializeModule } from 'angular2-materialize';
 import { AppComponent } from './app.component';
 import { InitialComponent } from './initial/initial.component';
 import { QuizComponent } from './quiz/quiz.component';
-import { SucessComponent } from './sucess/sucess.component';
+import { SuccessComponent } from './success/success.component';
 import { routing } from './app.routing';
 import { QuizModule } from './quiz/quiz.module';
 import { QuizService } from './quiz/quiz.service';
@@ -17,7 +17,7 @@ import { QuizService } from './quiz/quiz.service';
   declarations: [
     AppComponent,
     InitialComponent,
-    SucessComponent,
+    SuccessComponent,
   ],
   imports: [
     MaterializeModule,
@@ -25,6 +25,7 @@ import { QuizService } from './quiz/quiz.service';
     routing,
     ReactiveFormsModule,
     QuizModule,
+    FormsModule
   ],
   providers: [
     QuizService,

@@ -3,37 +3,36 @@
 
   <form (ngSubmit)="onSubmit()" class="row container" [formGroup]="formulario">
     
-    <div class="col s12 center" *ngFor="let quizze of quizzes;let ind = index">
-      <p class="center">{{quizze.id}} - {{quizze.titulo}}</p>
+    <div class="col s12 center dividerCustom" *ngFor="let quizze of quizzes;let ind = index">
+      <p class="center">{{ quizze.id }} - {{ quizze.titulo }}</p>
       <div class="col s4 validate" *ngFor="let opcao of quizze.opcoes;let i = index">
         <p>
-          <input formControlName="q{{ind}}" ngModel value="{{opcao}}" type="radio" class="with-gap" id="q{{ind}}{{i}}">
-          <label for="q{{ind}}{{i}}">{{opcao}}</label>
+          <input formControlName="q{{ ind }}" [(ngModel)]="quizDto[ind].selected" value="{{ i }}" type="radio" class="with-gap" id="q{{ ind }}{{ i }}">
+          <label for="q{{ ind }}{{ i }}">{{opcao}}</label>
         </p>
       </div>
     </div>
 
-    <p>{{formulario.group}}</p>
-    <p>{{ formulario.value | json }}</p>
-
-    <div class="col s12 dividerCustom">
+    <div class="col s12">
       <p class="center">4 - Qual sua familiaridade com os tipos de investimentos abaixo? Leve em consideração o valor aplicadonos últimos 2 anos.</p>
       
       <div class="col s6" *ngFor="let quizSelection of quizSelect; let ind = index">
         <div>
-          <label class="labelCustom uppercase">{{titulo}}</label>
-          <select class="browser-default" formControlName="s{{ind}}" ngModel >
+          <label class="labelCustom uppercase"> {{ quizSelection.titulo }} </label>
+          <select class="browser-default" formControlName="s{{ ind }}" [(ngModel)]="selectDto[ind].selected">
               <option value="" disabled selected>Selecione uma opção</option>
-              <option *ngFor="let campo of selectInputs.campos" value="{{quizSelection.id}}">{{quizSelection.titulo}}</option>
+              <option *ngFor="let opcao of quizSelection.opcoes" value="{{ ind }}">{{ opcao.opcao }}</option>
               
           </select>
         </div>
         
       </div>
     </div>
-    <div class="right">
-      <a class="waves-effect btn-flat btn-pattern space-right modal-trigger col s5 marginBtns" routerLink="/">Não</a>
-      <button class="waves-effect btn-flat btn-pattern col s5">Salvar</button>
+
+    <div class="col s12 boxButtons">
+      <a href="#!" class="waves-effect btn-flat btn-pattern space-right  col s3 offset-s5 marginBtns" routerLink="/initial">voltar</a>
+      <button class="waves-effect btn-flat btn-pattern amber salvar lighten-2 col s3 offset-s1">Salvar</button>
     </div>
+    
   </form>
 </main>

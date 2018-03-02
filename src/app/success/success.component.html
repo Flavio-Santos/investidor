@@ -1,0 +1,26 @@
+<main class="row">
+  <h1 class="col s12 center green-text">Cadatro Realizado com sucesso</h1>
+  <!-- <ul>
+    <li *ngFor="let qualquer of info.quiz">{{ qualquer.opcoes[qualquer.selected] }}</li>
+  </ul> -->
+
+  <div class="center col s12" *ngFor="let quiz of info.quizzes">
+    <b>
+      {{quiz.id}} {{ quiz.titulo }}
+    </b>
+    <div>
+      {{ quiz.opcoes[quiz.selected] }}
+    </div>
+  </div>
+
+
+  <div class="center col s12" *ngFor="let select of info.selects">
+    <b>
+      {{ select.id }} {{ select.titulo }}
+    </b>
+    <div>
+      {{ select.opcoes[select.selected].opcao }}
+    </div>
+  </div>
+
+</main>

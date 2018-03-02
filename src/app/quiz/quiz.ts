@@ -3,6 +3,7 @@ class Quiz {
     titulo: String
     opcoes: String[]
 
+
     constructor(object: any = {}) {
         
     }

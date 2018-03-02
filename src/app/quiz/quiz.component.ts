@@ -6,6 +6,8 @@ import { MaterializeDirective } from 'angular2-materialize';
 
 import Quiz from './quiz'
 import QuizSelect from './quiz.select'
+import QuizDTO from './quizDTO';
+import SelectDTO from './selectDTO';
 import { QuizService } from './quiz.service'
 import { Router } from '@angular/router';
 
@@ -19,11 +21,12 @@ export class QuizComponent implements OnInit {
   quizzes: Quiz[]
   quizSelect: QuizSelect[]
 
-  ngValues:any;
+  ngValues: any;
   selectInputs: Object[] = [];
   arrPer: String[] = [];
   formulario: FormGroup;
-
+  quizDto: QuizDTO[]
+  selectDto: SelectDTO[];
   constructor(
     private http: Http,
     private quizService: QuizService,
@@ -34,37 +37,44 @@ export class QuizComponent implements OnInit {
   }
 
   ngOnInit() {
-    const { quizService, formulario, quizzes } = this
+    let { quizService, formulario, quizzes, quizSelect } = this
     quizService
       .getQuestions()
-        .subscribe(
-          data => {
-            this.quizzes = data.perguntas
-            this.quizSelect = data.select
-
-            console.log(this.quizzes)
-          },
-          err => {
-            console.log(err);
-          }
-        )
+      .subscribe(
+      data => {
+        this.quizzes = data.perguntas
+        this.quizSelect = data.select
+        this.quizDto = this.quizzes.map((quiz) => {
+          return new QuizDTO(quiz.id, quiz.titulo, quiz.opcoes);
+        })
+        this.selectDto = this.quizSelect.map((select) => {
+          return new SelectDTO(select.id, select.titulo, select.opcoes);
+        })
+      },
+      err => {
+        console.log(err);
+      }
+      )
 
     this.formulario = this.formBuilder.group({
       q0: [null, Validators.required],
       q1: [null, Validators.required],
       q2: [null, Validators.required],
-      s0: [null, ],
-      s1: [null, ],
-      s2: [null, ],
-      s3: [null, ],
+      s0: [null, Validators.required],
+      s1: [null, Validators.required],
+      s2: [null, Validators.required],
+      s3: [null, Validators.required],
     })
   }
 
   onSubmit() {
     if (this.formulario.valid) {
-      console.log(this.quizzes);
-      localStorage.setItem('db', JSON.stringify(this.quizzes))
-      this.router.navigate(['/sucess']);
+      let transfer = {
+        quizzes: this.quizDto,
+        selects: this.selectDto
+      }
+      localStorage.setItem('db', JSON.stringify(transfer))
+      this.router.navigate(['/success']);
 
     } else {
       console.log("")
