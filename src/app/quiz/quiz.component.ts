@@ -85,14 +85,5 @@ export class QuizComponent implements OnInit {
       });
     }
 
-    //redirecionamento para sucess
-
-    //console.log(this.formulario);
-    //this.quiz = this.formulario.value;
-    //console.log(this.quiz);
-
-    /*this.http.post('', JSON.stringify(this.formulario.value))
-    .map(res=> res)
-    .subscribe(dados => console.log(dados));*/
   }
 }

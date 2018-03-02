@@ -8,7 +8,7 @@
       <div class="col s4 validate" *ngFor="let opcao of quizze.opcoes;let i = index">
         <p>
           <input formControlName="q{{ ind }}" [(ngModel)]="quizDto[ind].selected" value="{{ i }}" type="radio" class="with-gap" id="q{{ ind }}{{ i }}">
-          <label for="q{{ ind }}{{ i }}">{{opcao}}</label>
+          <label for="q{{ ind }}{{ i }}">{{ opcao }}</label>
         </p>
       </div>
     </div>

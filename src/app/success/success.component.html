@@ -1,25 +1,28 @@
 <main class="row">
+  <div class="col s12 center">
+    <i class="material-icons iconStyle">done</i>
+  </div>
   <h1 class="col s12 center green-text">Cadatro Realizado com sucesso</h1>
-  <!-- <ul>
-    <li *ngFor="let qualquer of info.quiz">{{ qualquer.opcoes[qualquer.selected] }}</li>
-  </ul> -->
 
-  <div class="center col s12" *ngFor="let quiz of info.quizzes">
-    <b>
-      {{quiz.id}} {{ quiz.titulo }}
-    </b>
-    <div>
-      {{ quiz.opcoes[quiz.selected] }}
+  <div class="center col s8 offset-s2 outInfo" *ngFor="let quiz of info.quizzes">
+    
+    <div class="title">
+      <p><b>{{ quiz.id }} {{ quiz.titulo }}</b></p>
     </div>
+
+    <div class="answer">
+      <p>{{ quiz.opcoes[quiz.selected] }}</p>
+    </div>
+  
   </div>
 
 
-  <div class="center col s12" *ngFor="let select of info.selects">
-    <b>
-      {{ select.id }} {{ select.titulo }}
-    </b>
-    <div>
-      {{ select.opcoes[select.selected].opcao }}
+  <div class="center col s8 offset-s2 outInfo" *ngFor="let select of info.selects">
+    <div class="title">
+      <p><b>{{ select.id+3 }} {{ select.titulo }}</b></p>
+    </div> 
+    <div class="answer">
+      <p>{{ select.opcoes[select.selected].opcao }}</p>
     </div>
   </div>
 
